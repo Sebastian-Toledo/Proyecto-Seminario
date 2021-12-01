@@ -1,0 +1,226 @@
+body { 
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+#ppal{
+	background-color: #ff3030;
+	display: flex;
+	flex-direction: row;
+	height: 700px;
+	width: 70%;
+	border-radius: 5px;
+	border: 4px solid #a81e1e;
+}
+
+#hojaList{
+	display: flex;
+	width: 55%;
+	height: 100%;
+	flex-direction: column;	
+}
+
+
+#separador{	
+	display: inline-flex;
+	background-color: #a81e1e;
+	width: 5%;
+	height: 100%;
+	background-image: linear-gradient(to right, rgba(120, 20, 20), rgba(168, 30, 30), rgba(120, 20, 20));
+}
+
+#hojaInfo{
+	display: inline-flex;
+	width: 55%;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+}
+
+#navBar{
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-evenly;
+	height: 15%;
+	margin-top: 2%;
+}
+
+#selecPag{
+	margin-top: 2%;
+	width: 15%;
+	height: 40%;
+}
+
+.btnHoja{
+	width: 30%;
+	height: 50%;
+	background-color: #7bdb60;
+	border-radius: 5%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.btnHoja:hover{
+	transition-duration: 0.4s;
+	background-color: #a1e38f;
+}
+
+#listBox{
+	height: 85%;
+	display: inline-flex;
+	justify-content: space-evenly;
+	margin-top: 5px;
+}
+
+#listInner{
+	height: 95%;
+	width: 60%;
+	background-color: #d6d6d6;
+	border: 4px solid white;
+	border-style: groove;
+}
+
+#listaNumerada{
+  list-style-type: none;
+}
+
+#itemLista:hover{
+	background-color: #aee8db;
+	cursor: pointer;
+}
+
+#itemLista{
+	margin: 7px;
+	color: black;
+}
+
+#infoDesc{
+	height: 10%;
+	margin: 2%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+#infoNombTipo{
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-evenly;
+	height: 6%;
+	margin-top: 2%;
+}
+
+#infoNombre{
+	font-weight: bold;
+	display: flex;
+	background-color: #a81e1e;
+	border-radius: 5px;
+	border-style: groove;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 40%;
+}
+
+#infoTipo{
+	width: 40%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+#infoMov{
+	position: relative;
+	height: 20%;
+	text-align: center;
+}
+
+#movInner{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	margin-top: 5px;
+}
+
+.movimientos{
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40%;
+	width: 40%;
+	background-color: #a81e1e;
+	text-transform: capitalize;
+    cursor: default;
+}
+
+.tooltip{
+	position: relative;
+}
+
+.tooltip .tooltiptext{
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	width: 200%;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    text-transform: none;
+    position: absolute;
+  	z-index: 1;
+}
+
+.tooltip:hover .tooltiptext{
+	visibility: visible;
+}
+
+#infoSprites{
+	position: relative;
+	height: 15%;
+	display: inline-flex;
+	justify-content: space-evenly;
+	margin-bottom: 3%;
+}
+
+#infoArte{
+	position: relative;
+	width: 100%;
+	height: 200px;
+	padding-bottom: 5%;
+	display: inline-flex;
+	justify-content: space-evenly;
+}
+
+#infoArteBox{
+	width: 60%;
+	display: inline-flex;
+	background-color: #9ed3db;	
+	justify-content: space-evenly;
+	border: 4px solid white;
+	border-style: groove;
+	border-radius: 5%;
+	background: radial-gradient(white, #96d7e0);
+}
+
+
+.sprite {
+	height: 120px;
+	width: 120px;
+	border: 2px solid white;
+	border-style: groove;
+	border-radius: 5px;
+}
+
+
+

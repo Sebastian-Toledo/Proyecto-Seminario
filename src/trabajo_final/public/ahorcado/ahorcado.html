@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ahorcado.css">
+</head>
+<body>
+  <script src="./front.js"></script>
+  <div id="titulo">
+    <h1>Ahorcado</h1>
+    <input type="button" onclick="comenzar()" value="Nuevo juego">
+  </div>
+  <div id="main">
+    <div id="left">
+      <div id="imgDiv">
+        <img id="imagenAhorcado" src=6vidas.jpg>
+      </div>
+    </div>
+    <div id="right">
+      <div id="vidasBox">
+        VIDAS:<div id="vidas"></div>
+      </div>
+      <div>
+        <h1 id="letraElegidaBox">X</h1>
+      </div>
+      <div id="letBoxDiv">
+        <p>Letra: 
+          <input id="letBox" name="letra" type="text" placeholder="_" required maxlength="1" pattern="[A-Za-z]">
+        </p>
+        <input type="button" id="enviarLetraButton" onclick="letra()" value="Enviar letra" disabled=true>
+      </div>
+      <div>Letras Usadas:
+        <div id="letrasUsadasBox">Ninguna</div>
+      </div>
+    </div>
+  </div>
+  </body>
+  </html>

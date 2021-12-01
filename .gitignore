@@ -1,0 +1,10 @@
+/node_modules
+
+/src/express/node_modules
+src/node_modules/
+<<<<<<< HEAD
+
+node_modules
+=======
+/src/trabajo_final/node_modules
+>>>>>>> Sebastian-Toledo

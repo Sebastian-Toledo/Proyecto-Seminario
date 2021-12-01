@@ -1,0 +1,71 @@
+#letraElegidaBox {
+  letter-spacing: 0.1em;
+}
+
+#letBox {
+  width: 10px;
+}
+
+#vidasBox {
+  margin-top: 10%;
+}
+
+body {
+  margin-left: 25%;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeSdenCJyVgNROSaT7ZTjH0p-r-D8WEPxJNA&usqp=CAU);
+}
+
+#main {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+#left, #right {
+  width: 50%;
+  align-items: center;
+}
+
+#left {
+  background-color: white;
+  border-radius: 25px 0px 0px 25px;
+  border-right: 2px solid black;
+}
+
+#right {
+   border-radius: 0px 25px 25px 0px;
+   display: flex;
+   flex-direction: column;
+   background-color: #C8C2BC;
+}
+
+input[type="button"] {
+  width: 100px;
+}
+
+#imagenAhorcado {
+  width: 100%;
+  border-radius: 25px;
+}
+
+#letBoxDiv {
+  margin-top: 4%;
+  margin-bottom: 10%;
+}
+
+#titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  border-radius: 10px;
+  background-color: #C8C2BC;
+  border: 2px solid black;
+  margin-bottom: 5%;
+  padding-bottom: 5%;
+}

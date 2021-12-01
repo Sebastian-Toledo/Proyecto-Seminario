@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/tateti/tateti.css">
+    <link rel="shortcut icon" href="tateti.png">
+
+</head>
+<body>
+    <h1>Tateti</h1>
+    <div>
+         <h2>Link para invitar al jugador dos</h3>
+         <input type="text" size="60" id="tableId"> 
+         <input type="button" value="Copiar" onclick="copyLink()"> 
+         <span id="msg"></span>
+    </div>
+    <h2 id="jugador"></h1>
+    <p id="turno"></p>
+    <p id="error"></p>
+    <table>
+        <tr>
+            <td id="0"></td>
+            <td id="1"></td>
+            <td id="2"></td>
+        </tr>
+        <tr>
+            <td id="3"></td>
+            <td id="4"></td>
+            <td id="5"></td>
+        </tr>
+        <tr>
+            <td id="6"></td>
+            <td id="7"></td>
+            <td id="8"></td>
+        </tr>
+    </table>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/tateti/Index.js"></script>
+</body>
+</html>

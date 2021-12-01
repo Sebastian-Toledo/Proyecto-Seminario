@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practica 1</title>
+    <link rel="stylesheet" type="text/css" href="css/sebastian-dashboard.css">
+	<script type="text/javascript" value="link" src="js/sebastian-practica1.js"></script>
+
+</head>
+<body>
+    <p>Mirar la consola</p>
+    <script type="text/javascript">
+
+        console.log("Hola Mundo!");
+
+        log("Hola Mundo!");
+        
+        var text="Lorem ipsum dolor sit amet";   
+        ejercicio6(text);
+
+        ejercicio7();
+    
+        var dia1 = new Date();
+        var dia2 = new Date(1575978300000);
+
+        log("Fecha 1: ");
+		imprimirFecha(dia1);
+		log("Fecha 2: ");
+		imprimirFecha(dia2);
+
+		cambioDeFecha(dia1, dia2);
+		log("Cambian las fechas: ");
+		imprimirFecha(dia1);
+		imprimirFecha(dia2);
+
+		log("Resta de fechas 1 y 2: ");
+		imprimirFecha(restaFechas(dia1, dia2));   
+    </script>
+    <p />
+    <a href="sebastian-dashboard.html">Volver</a>
+</body>
+</html>

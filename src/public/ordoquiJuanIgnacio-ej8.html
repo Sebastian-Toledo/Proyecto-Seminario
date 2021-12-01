@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 8</title>
+	<link rel="stylesheet" type="text/css" href="css/ordoquiJuanIgnacio-dashboard.css">
+	<script type="text/javascript" value="link" src="js/ordoquiJuanIgnacio-practica1.js"></script>
+</head>
+<body>
+	<a>Chequear consola</a>
+	<script type="text/javascript">
+		const dia1 = new Date();
+		const dia2 = new Date(1575978300000);
+		log("Fecha 1: ");
+		imprimirFecha(dia1);
+		log("Fecha 2: ");
+		imprimirFecha(dia2);
+
+		cambiarFechas(dia1, dia2);
+		log("Cambian las fechas: ");
+		imprimirFecha(dia1);
+		imprimirFecha(dia2);
+
+		log("Resta de fechas 1 y 2: ");
+		imprimirFecha(restaFechas(dia1, dia2));
+	</script>
+	<p />
+	<a href="ordoquiJuanIgnacio-dashboard.html">Volver</a>
+</body>
+</html>

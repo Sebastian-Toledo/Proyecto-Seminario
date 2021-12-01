@@ -1,0 +1,33 @@
+td{     
+    border:  #000000 5px solid;
+    width: 10em; 
+    height: 10em;
+    text-align: center;
+    background-color:rgba(199, 199, 199, 0.726);
+}
+h1{ 
+    font-size: 50px;
+    font-weight: bold;
+}
+h2{
+    font-size: 30px;
+}
+p{
+    font-size: 25px;
+    font-weight: bolder;
+    
+}
+h1,h2,p{
+    font-family: sans-serif;
+    display: block;   
+}
+.piece{
+    color:black;
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+}
+
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeSdenCJyVgNROSaT7ZTjH0p-r-D8WEPxJNA&usqp=CAU);
+}

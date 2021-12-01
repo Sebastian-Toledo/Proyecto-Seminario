@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokedex</title>
+	<link rel="stylesheet" href="ejercicio7.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="ppal">
+		<div id="hojaList">
+			<div id="navBar">
+				<div id="btnAnt" class="btnHoja" onclick="btnCambioHoja(this)">Anterior</div>
+				<select id="selecPag" onchange="selectCambioHoja()"></select>
+				<div id="btnSig" class="btnHoja" onclick="btnCambioHoja(this)">Siguiente</div>
+			</div>
+			<div id="listBox">
+				<div id="listInner">
+					<ul id="listaNumerada"></ul>
+				</div>
+			</div>
+		</div>
+		<div id="separador"></div>
+		<div id="hojaInfo">
+			<div id="infoNombTipo">
+				<div id="infoNombre"></div>
+				<div id="infoTipo"></div>
+			</div>
+			<div id="infoMov">Movimientos
+				<div id="movInner">
+					<div class="movimientos tooltip"></div>
+					<div class="movimientos tooltip"></div>
+					<div class="movimientos tooltip"></div>
+					<div class="movimientos tooltip"></div>
+				</div>	
+			</div>
+			<div id="infoDesc"></div>
+			<div id="infoSprites">
+				<img class="sprite">
+				<img class="sprite">
+			</div>
+			<div id="infoArte">
+				<div id="infoArteBox">
+					<img id="artwork">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./ejercicio7.js"></script>
+	<script type="text/javascript">
+		
+		var jsonPoke;
+		var jsonTotal;
+		var jsonDesc;
+		var jsonDescMov;
+
+/*		var jsonDescMov1;
+		var jsonDescMov2;
+		var jsonDescMov3;
+	
+
+		var xhttpDescMov0 = new XMLHttpRequest();
+		var xhttpDescMov1 = new XMLHttpRequest();
+		var xhttpDescMov2 = new XMLHttpRequest();
+		var xhttpDescMov3 = new XMLHttpRequest();
+
+		xhttpDescMov0.onreadystatechange = descMov0Handler;
+		xhttpDescMov1.onreadystatechange = descMov1Handler;
+		xhttpDescMov2.onreadystatechange = descMov2Handler;
+		xhttpDescMov3.onreadystatechange = descMov3Handler;
+
+*/		
+		var xhttpTotal = new XMLHttpRequest();
+		var xhttpPoke = new XMLHttpRequest();
+		var xhttpDesc = new XMLHttpRequest();
+
+
+		var xhttpDescMov = new XMLHttpRequest();
+
+		// xhttpDescMov.onreadystatechange = descMovHandler();
+
+		xhttpDesc.onreadystatechange = descHandler;
+		xhttpTotal.onreadystatechange = listaHandler;
+		xhttpPoke.onreadystatechange = mostrarPokemonHandler;
+		xhttpTotal.open("GET", "https://pokeapi.co/api/v2/pokemon?",true);
+		xhttpTotal.send();
+		
+	</script>
+</body>
+</html>

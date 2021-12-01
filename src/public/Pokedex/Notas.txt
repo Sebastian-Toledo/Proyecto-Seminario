@@ -1,0 +1,34 @@
+﻿- Extender 20 pokemon por pagina - //Fixed
+	esto se puede hacer facil, podria ser parametrible tambien, porque filtre y en la pagina aparecen 5 
+	veces el numero 10, que es el usado en la paginacion, si uno remplaza por 20 este numero se adapta
+	 el paginado
+	
+- Arreglar paginado * importante //Fixed
+	- la ultima hoja - 
+	( la cantidad de pokemon es 1118 si lo dividis en 10 te da 111,8 y imprime 112 paginas, 
+	notar que el paginado empieza en 1, por eso es que la pagina 11 solo tiene 8 elementos 
+	y no existe la pagina 12 )
+	- limit que se modifica al ver la ultima hoja - 
+	(esto lo hace porque es la canidad de elementos que te puede traer, es un tema de la api, y como guarda 
+	el limit para posteriores consultas, cuando uno hace va al previous en la ultima pagina modifica el limite
+	tambien al ultimo utilizado, se puede solo en este caso parsear el texto y modificar el limit para que
+	tenga consistencia ) //Fixed, el problema era el limit Y el offset que se modificaban con el final. No es "escalable"
+
+- Agregar habilidades //Fixed
+
+- Modificar css/estético //Fixed
+   en el comentario del punto 1 comente que si uno cambia el paginado a 20 el listado se acomoda a este numero,
+   pero no asi los estilos de la web , recuerden que siempre hay que tratar de que sea responsive en la medida 
+   de lo posible, al menos en cuanto al espacio que ocupan los elementos dentro de otros
+
+- Refactoring - Recomendado
+  - extraer el js en una hoja externa //Fixed
+  - revisar si se pueden reducir las funciones utilizadas y los parametros de estas
+  - revisar manual de estilo de ES6
+  - mejorar uso de git, cada uno tienen que reflejar los cambios en commit personales
+  
+- Agregar una descripcion del pokemon(en español) - //Fixed
+
+- Agregar un tooltip(con descripcion de los ataques/movimientos) - //Fixed
+
+-Agregar un if para chequear si los sprites no existen o no cargan.//Fixed

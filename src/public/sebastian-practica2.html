@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practica 2</title>
+    <link rel="stylesheet" type="text/css" href="css/sebastian-dashboard.css">
+	<script type="text/javascript" value="link" src="js/sebastian-practica2.js"></script>
+</head>
+<body>
+    <script>
+     //ejercicio 1
+     /*
+     console.log("Ejercicio 1");
+     console.log(typeof (a));
+     console.log(typeof b);
+     console.log(typeof c);
+     console.log(typeof d);
+     console.log(typeof e);
+     console.log(typeof f);
+     console.log(typeof g);
+     console.log(typeof h);
+     console.log(typeof i);
+     console.log(typeof j);
+     console.log(typeof k);
+     */
+     //ejercicio 2
+     /*
+     console.log(" ");
+     console.log("Ejercicio 2");
+     console.log(++a); //devuelve el numero antes de incrementarlo
+     console.log(a++); //devuelve el numero despues de incrementarlo
+     console.log(a == '27');//compara valor
+     console.log(a === '27');//compara tipo
+     
+     //ejercicio 3
+     
+     En caso de que el arreglo no tenga ningun elementento se tendria que informar con un 
+     throw new Error("mensaje de error") escribiendo en los parentesis en mensaje de error
+     En caso de que el arreglo contenga un elemento que no es un numero se informa de la misma
+     manera y no se suma el elemento    
+     console.log(" ");
+     console.log("Ejercicio 3");
+     var prices = [1.2, 2, 22, -33, 12, 0.0, "13", Math.PI];
+     var names = ["John", "Paul", "George", "Ringo"];
+     
+     console.log("El valor maximo es: " + max(prices));
+     console.log("El valor minimo es: " + min(prices));
+     console.log("El promedio es: " + avg(prices));
+     console.log("La sumatiria es: " + sum(prices));
+     console.log("El valor maximo es: " + max(names));
+     console.log("El valor minimo es: " + min(names));
+     console.log("El promedio es: " + avg(names));
+     console.log("La sumatiria es: " + sum(names));
+     console.log("El valor maximo es: " + max([]));
+     console.log("El valor minimo es: " + min([]));
+     console.log("El promedio es: " + avg([]));
+     console.log("La sumatiria es: " + sum([]));
+     
+     
+     //ejercicio 4
+     console.log(" ");
+     console.log("Ejercicio 4");
+     var names = ["John", "Paul", "George", "Ringo"];
+     console.log(names.reduce(concat));//imprime suma todos los strings y lo imprime.
+
+     //ejercicio 5
+     console.log(" ");
+     console.log("Ejercicio 5");
+     var a = [1,2,3,4];
+     var b = [1,2,3,4];
+     var c = [1,2,3,4,5];
+     var d = "Hola";
+     var e = null;
+     console.log(arrayEquals(a, a));
+     console.log(arrayEquals(a, b));
+     console.log(arrayEquals(b, c));
+     console.log(arrayEquals(e, c));
+     console.log(arrayEquals(c, d));
+     console.log(arrayEquals(e, e));
+
+     //ejercicio 6
+     console.log(" ");
+     console.log("Ejercicio 6");
+     isInteger(2); // retorna true
+     isInteger(2.0); // retorna true
+     isInteger(2.1); // retorna false
+     isInteger(-10); // retorna true
+     isInteger([1]); // retorna false
+     isInteger("2"); // retorna false
+     isInteger(true); // retorna false
+     isInteger(null); // retorna false
+     var num;
+     isInteger(num); // retorna false
+
+     //ejercicio 7
+     console.log(" ");
+     console.log("Ejercicio 7");
+     isNumeric("2") // retorna true
+     isNumeric("2a") // retorna false
+     isNumeric(2) // retorna false
+
+     //ejercicio 8
+     console.log(" ");
+     console.log("Ejercicio 8");
+     var prices = {
+     MILK: 48.90,
+     BREAD: 90.50,
+     BUTTER: 130.12
+     };
+     var amounts = {
+     MILK: 1,
+     BREAD: 0.5,
+     BUTTER: 0.2
+     };
+     console.log(typeof prices); //devuelve el tipo de prices (Objeto)
+     console.log(prices.BREAD); //devuelve el valor de bread
+     console.log(amounts["MILK"]);//devuelve la cantidad de leche
+     console.log(total(prices, amounts));
+     var amounts2 = {
+     BREAD: 1.5
+     };
+     console.log(total(prices, amounts2));
+      
+     //ejercicio 9
+     console.log(" ");
+     console.log("Ejercicio 9");
+     var words = ['perro', 'gato', 'casa','árbol', 'nube', 'día', 'noche','zanahoria', 'babuino'];
+     ordenAlfabetico(words);
+     console.log(words);
+     ordenIvertido(words);
+     console.log(words);
+     
+     //ejercicio 10
+     console.log(" ");
+     console.log("Ejercicio 10");
+     ordenAlfabeticoPorLongitud(words);
+     console.log(words);
+     ordenIvertidoPorLongitud(words);
+     console.log(words); 
+      
+     //ejercicio 11
+     console.log(" ");
+     console.log("Ejercicio 11");
+     var iden = x => x;
+     var identidad = identity;
+     console.log(typeof identity);//imprime Fuction
+     console.log(typeof id);//imprime Fuction
+     console.log(typeof iden);//imprime Fuction
+     console.log(typeof identidad);//imprime Fuction
+
+     console.log(identity('Hola'));//imprime Hola
+     console.log(id('Hello'));//imprime Hello
+     console.log(iden('Buen día'));//imprime Buen día
+     console.log(identidad('Buen día'));//imprime Buen día
+     
+     //ejercicio 12
+     console.log(" ");
+     console.log("Ejercicio 12");
+
+     var numbers = [ 1, 3, 4, 6, 23, 56, 56, 67, 3, 567, 98, 45, 480, 324, 546, 56 ];
+
+     var sum = (x, y) => x + y;
+     numbers.reduce(sum, 0);
+     console.log(reduce(numbers, sum, 0));
+    
+     //ejercicio 13
+     console.log(" ");
+     console.log("Ejercicio 13");
+     var alice = {
+     name : "Alice",
+     dob : new Date(2001, 3, 4),
+     height : 165,
+     weight : 68
+     };
+     var bob = {
+     name : "Robert",
+     dob : new Date(1997, 0, 31),
+     height : 170,
+     weight : 88
+     };
+     var charly = {
+     name : "Charles",
+     dob : new Date(1978, 9, 15),
+     height : 188,
+     weight : 102
+     };
+     var lucy = {
+     name : "Lucía",
+     dob : new Date(1955, 7, 7),
+     height : 155,
+     weight : 61
+     };
+     var peter = {
+     name : "Peter",
+     dob : new Date(1988, 2, 9),
+     height : 165,
+     weight : 99
+     };
+     var luke = {
+     name : "Lucas",
+     dob : new Date(1910, 11, 4),
+     height : 172,
+     weight : 75
+     };
+     let people = [alice,bob,charly,lucy,peter,luke];
+     console.log(imcMayores(people));
+     console.log(age(people));
+     console.log(imcMayoresDe(40,people));
+     console.log(imcPromedio(people));
+     console.log(min(people));
+     console.log(menorAMayor(people));
+     */
+     //ejercicio 15
+     console.log(" ");
+     console.log("Ejercicio 15");
+
+
+    </script>
+    <!-- 
+    <p onclick="showMessage('Hola')">Por favor haga click aquí</p>
+    <form>
+        <input type="text" id="texto"/>
+        <input type="text" id="texto2"/>
+        <input type="button" value="Enviar" onclick="enviar()"/>
+    </form>
+    
+    <form>
+        <input type="button" value="sumar" onclick="sumar()"/>
+        <input type="button" value="restar" onclick="restar()"/>
+        <input type="button" value="multiplicar" onclick="multiplicar()"/>
+        <input type="button" value="dividir" onclick="dividir()"/>
+        <p>Primer numero para sumar</p>
+        <input type="number" id="numero1" />
+        <p>Segundo numero para sumar</p>
+        <input type="number" id="numero2"/>
+        <p >Resultado</p>
+        <input type="text" id="Resultado" readonly="readonly"/>        
+    </form> 
+    <select id="colorSeleccionado" onchange="color()">
+        <option value="red">Rojo</option>
+        <option value="green">Verde</option>
+        <option value="white">Blanco</option>
+        <option value="blue">Azul</option>       
+    </select>
+    <script>
+        window.onload =  color();
+    </script>
+    <input type="button" value="Seleccionar Color" onclick="color()"/>
+    -->
+       
+
+</body>
+</html>

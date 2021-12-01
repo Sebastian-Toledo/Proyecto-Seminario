@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pokedex</title>
+	<link rel="stylesheet" href="Ejercicio 7.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="ppal">
+		<div id="hojaList">
+			<div id="navBar">
+				<div id="btnAnt" class="btnHoja" onclick="btnCambioHoja(this)">Anterior</div>
+				<select id="selecPag" onchange="selectCambioHoja()"></select>
+				<div id="btnSig" class="btnHoja" onclick="btnCambioHoja(this)">Siguiente</div>
+			</div>
+			<div id="listBox">
+				<div id="listInner">
+					<ul id="listaNumerada"></ul>
+				</div>
+			</div>
+		</div>
+		<div id="separador"></div>
+		<div id="hojaInfo">
+			<div id="infoNombTipo">
+				<div id="infoNombre"></div>
+				<div id="infoTipo"></div>
+			</div>
+			<div id="infoMov">Movimientos</div>
+			<div id="infoSprites">
+				<img class="sprite">
+				<img class="sprite">
+			</div>
+			<div id="infoArte">
+				<div id="infoArteBox">
+					<img id="artwork">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function btnCambioHoja(btn){
+			if(btn.id == "btnAnt"){
+				if( document.getElementById("selecPag").value > "1"){
+					document.getElementById("selecPag").value--;
+					xhttpTotal.open("GET",jsonTotal.previous,true);
+					xhttpTotal.send();	
+				}
+			}else{
+				if(document.getElementById("selecPag").value < jsonTotal.count/10){
+					document.getElementById("selecPag").value++;
+					xhttpTotal.open("GET",jsonTotal.next,true);
+					xhttpTotal.send();
+				}	
+			}
+		}
+
+		function btnCambioHojaHandler(){
+			cargarPagina();
+		}
+
+		function crearHojas(cantPoke){
+			let sel = document.getElementById("selecPag");
+			let cantHojas = cantPoke / 10;	
+			if(!sel.value ==""){
+				let hojaAct = sel.value;
+			}
+			sel.remove(sel.lastElementChild);
+			for (var i = 0; i < cantHojas; i++) {
+				let pag = document.createElement("option");
+				pag.value = i + 1;
+				pag.text = i + 1;
+				sel.appendChild(pag);
+			}
+			if(typeof hojaAct !== "undefined"){
+				sel.value = hojaAct;
+			}
+		}
+
+		function selectCambioHoja(){
+			let pag = document.getElementById("selecPag").value * 10;
+			let url = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=" + pag; 
+			xhttpTotal.open("GET",url,true);
+			xhttpTotal.send();
+		}
+
+		function listaHandler(){
+			if(xhttpTotal.readyState == 4 && xhttpTotal.status == 200){
+				jsonTotal = JSON.parse(xhttpTotal.responseText);
+				chequeoHojas();
+				cargarPagina();
+			}
+		}
+
+		function chequeoHojas(){
+			let sel = document.getElementById("selecPag");
+			if(sel.value == ""){
+				crearHojas(jsonTotal.count);
+			}
+		}
+
+		function stateChangeHandler(){
+			if(xhttpPoke.readyState == 4 && xhttpPoke.status == 200){
+				jsonPoke = JSON.parse(xhttpPoke.responseText);
+				document.getElementById("infoNombre").innerHTML = 
+				"#" + jsonPoke.id + " - " + jsonPoke.species.name.toUpperCase(); 
+				let tipo = "";
+				for (let t = 0; t < jsonPoke.types.length; t++) {
+						tipo += jsonPoke.types[t].type.name + " ";
+						if(t + 1 < jsonPoke.types.length){
+							tipo += "/ "
+						}
+				}
+				document.getElementById("infoTipo").innerHTML = tipo;
+				document.getElementById("artwork").src = 
+				jsonPoke.sprites.other["official-artwork"].front_default;
+				document.getElementsByClassName("sprite")[0].src = 
+				jsonPoke.sprites.front_default;
+				document.getElementsByClassName("sprite")[1].src =
+				jsonPoke.sprites.back_default;
+			}
+		}
+		var xhttpTotal = new XMLHttpRequest();
+		var xhttpPoke = new XMLHttpRequest();
+		xhttpTotal.onreadystatechange = listaHandler;
+		xhttpPoke.onreadystatechange = mostrarPokemonHandler;
+		xhttpTotal.open("GET", "https://pokeapi.co/api/v2/pokemon?limit=10",true);
+		//xhttpPoke.open("GET", "https://pokeapi.co/api/v2/pokemon/noctowl",true);
+		xhttpTotal.send();
+		//xhttpPoke.send();
+		var jsonPoke;
+		var jsonTotal;
+
+		function cargarPagina(){
+			document.getElementById("listaNumerada").innerHTML = "";
+			let arrayPoke = jsonTotal.results;
+			for (var i = 0; i < arrayPoke.length; i++) {
+				let fila = document.createElement("li");
+				fila.id = "itemLista";
+				fila.onclick = mostrarPokemonReq;
+				fila.title = arrayPoke[i].url;
+				fila.innerHTML = arrayPoke[i].name.toUpperCase();
+				document.getElementById("listaNumerada").appendChild(fila);
+			}
+		}
+
+		function mostrarPokemonReq(){
+			xhttpPoke.open("GET",this.title,true);
+			xhttpPoke.send();
+		}
+
+		function mostrarPokemonHandler(){
+			if(xhttpPoke.readyState == 4 && xhttpPoke.status == 200){
+				jsonPoke = JSON.parse(xhttpPoke.responseText);
+				document.getElementById("infoNombre").innerHTML = 
+				"#" + jsonPoke.id + " - " + jsonPoke.species.name.toUpperCase(); 
+				let tipo = "";
+				for (let t = 0; t < jsonPoke.types.length; t++) {
+						tipo += jsonPoke.types[t].type.name + " ";
+						if(t + 1 < jsonPoke.types.length){
+							tipo += "/ "
+						}
+				}
+				document.getElementById("infoTipo").innerHTML = tipo;
+				document.getElementById("artwork").src = 
+				jsonPoke.sprites.other["official-artwork"].front_default;
+				document.getElementsByClassName("sprite")[0].src = 
+				jsonPoke.sprites.front_default;
+				document.getElementsByClassName("sprite")[1].src =
+				jsonPoke.sprites.back_default;
+			}
+		}
+	</script>
+</body>
+</html>
